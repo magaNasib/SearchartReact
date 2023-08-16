@@ -1,0 +1,50 @@
+div[class*="ValueContainer"]{
+    height: 2rem;
+    overflow: auto;
+    padding: 0 ;
+    
+}
+div[class*="IndicatorsContainer"]{
+    display: none;
+}
+
+div[class*="multiValue"]{
+    background: none !important;
+}
+
+div[class*="MultiValueGeneric"]{
+    color: #A7B4CA !important;
+}
+
+div[class*="Input"]{
+    color: #A7B4CA !important;
+}
+
+div[class*="control"]{
+    padding: 0.1rem;
+    min-height: 2rem !important;
+    height: 100%;
+    border-radius: 0.4375rem;
+    border: 1px solid #4A628A;
+    background: #293F64;
+    color: #A7B4CA !important;
+}
+#react-select-3-listbox{
+    background-color: #293F64;
+}
+#react-select-3-listbox>div::-webkit-scrollbar
+{
+	width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #2C3645;
+    
+    
+}
+
+#react-select-3-listbox>div::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #4A628A;
+}

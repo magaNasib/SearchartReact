@@ -1,0 +1,46 @@
+.banner {
+    background-image: url('../../assets/Map\ for\ Searchart.png');
+    width: 100%;
+    min-height: 82vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.banner h1 {
+    color: var(--background-a, #FFF);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -6rem;
+    margin-bottom: 2.5rem;
+}
+
+.banner h1 span {
+    background: var(--background-a, linear-gradient(180deg, #FF3C00 0%, #781E03 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.content {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.scroll{
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,18 @@
+.carousel {
+    background: #0D1420;
+    padding: 1rem;
+    box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.headingCarousel {
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    margin: 2rem 0;
+    line-height: normal;
+    background: linear-gradient(180deg, #842408 0%, #DD3501 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

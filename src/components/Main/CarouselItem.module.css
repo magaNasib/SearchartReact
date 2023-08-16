@@ -1,0 +1,9 @@
+.btnMore {
+    display: flex;
+    gap: 1.75rem;
+    background-color: #284068;
+    color: #fff;
+    border-radius: 6px;
+    padding: .5rem 2rem;
+
+}

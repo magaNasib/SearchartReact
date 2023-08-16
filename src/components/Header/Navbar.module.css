@@ -1,0 +1,65 @@
+.navbarRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem .1rem;
+    margin: 1rem 0;
+    align-items: center;
+    color: #fff;
+    min-height: 10vh;
+}
+
+.navbarRow .logoBar {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
+
+.logo {
+    width: 40.285px;
+    height: 40.285px;
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    gap: .8rem;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.toggleDark {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 13px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 7px;
+    border: 1px solid #1C2A3E;
+    background: #111D32;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btns .signUp {
+    display: flex;
+    padding: 12px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: var(--text-color-1, #030712);
+}

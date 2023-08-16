@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
+}
+@font-face {
+    font-family: "myFirstFont";
+    src: url("./Manrope/Manrope-VariableFont_wght.ttf");
+}
+body{
+    font-family: myFirstFont;
+}
+
+body{
+    background:  #09101B;
+}
+
+main{
+    background-image: url('./Vector.png'), url('./Vector2.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right top, center bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 90%;
+}
+.w-35{
+    width: 35%;
+}
+.w-30{
+    width: 30%;
+}
+
+
+.scrollStyled::-webkit-scrollbar
+{
+	width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #2C3645;
+    
+    
+}
+
+.scrollStyled::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #4A628A;
+}

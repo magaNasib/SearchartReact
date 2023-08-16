@@ -1,0 +1,18 @@
+.parentProgress{
+    width: 10rem;
+    margin: 0 auto;
+    height: 10px;
+    border-radius: 10px;
+    display: block;
+    background-color: #253041;
+    overflow: hidden;
+}
+.childProgress{
+    border-radius: 5px;
+    display: block;
+    height: 100%;
+}
+.flagIcon{
+    display: inline-block;
+    margin-left: .5rem;
+}

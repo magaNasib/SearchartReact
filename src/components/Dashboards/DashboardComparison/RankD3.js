@@ -1,0 +1,228 @@
+import React, { useRef } from 'react'
+import * as d3 from "d3";
+import { useD3 } from '../../Hooks/useD3';
+import './Amountchart.css'
+function RankD3({ data, countries }) {
+  const tooltipRef = useRef(null)
+
+
+  const ref = useD3(
+
+    (svg) => {
+      svg.select('.plot-area').selectAll("*").remove();
+      svg.selectAll('.axis-grid').remove();
+      const height = 200;
+      const width = 1300;
+      const margin = { top: 20, right: 10, bottom: 30, left: 40 };
+
+
+      var myColor = d3.scaleOrdinal()
+        .domain(countries ? countries.split(';') : [])
+        .range(d3.schemeSet2)
+
+      const x = d3
+        .scaleBand()
+        .domain(d3.range(data.year1, data.year2 + 1))
+        .rangeRound([margin.left, width - margin.right])
+        .padding(.1)
+
+      const y1 = d3
+        .scaleLinear()
+        .domain([data.max_rank, data.min_rank])
+        .rangeRound([height - margin.bottom, margin.top]);
+
+
+      const yAxisGridAmount = d3.axisLeft(y1).tickSize(-width).tickFormat('').ticks(10);
+      const xAxisGrid = d3.axisBottom(x).tickSize(-height).tickFormat('').ticks(50);
+
+
+      const xAxis = (g) => {
+        g.attr("transform", `translate(0,${height - margin.bottom})`)
+          .call(d3.axisBottom(x)
+            .tickValues(
+              d3
+                .ticks(...d3.extent(x.domain()), width / 60)
+                .filter((v) => x(v) !== undefined)
+            )
+            .tickSizeOuter(0)
+          ).call((g) => g.select(".domain").remove());
+      }
+
+      const y1Axis = (g) =>
+        g
+          .attr("transform", `translate(${margin.left},0)`)
+          .style("color", "white")
+          .call(d3.axisLeft(y1).ticks(10, "s"))
+          .call((g) => g.select(".domain").remove())
+          .call((g) =>
+            g
+              .append("text")
+              .attr("x", -margin.left)
+              .attr("y", 10)
+              .attr("fill", "currentColor")
+              .attr("text-anchor", "start")
+              .text(data.y1)
+          );
+
+      svg.select(".x-axis").call(xAxis);
+      svg.select(".y-axis").call(y1Axis);
+
+
+      svg.select('.plot-area').append('g')
+        .attr('class', 'y axis-grid')
+        .attr('transform', 'translate(0,0)')
+        .attr('stroke-width', '0')
+        .call(yAxisGridAmount);
+
+      svg.select('.plot-area').append('g')
+        .attr('class', 'x axis-grid')
+        .attr('transform', 'translate(-30,' + (height - 30) + ')')
+        .attr('stroke-width', '0')
+        .call(xAxisGrid);
+
+
+      data
+        && data.countries_data
+        && data.countries_data.map((eachCountry, index) => {
+          let eachCountryData = eachCountry.country;
+          let currentColor = '';
+          let flagIcon = ''
+
+          svg.select(".plot-area").append('path')
+            .attr("class", "newclass rank") 
+            .datum(eachCountryData)
+            .transition()
+            .duration(1000)
+            .attr('d', d3.line()
+              .x(function (d) {
+                if (d.Country_code_2) {
+                  flagIcon = d.Country_code_2;
+                }
+                return x(d.Year)
+              })
+              .y(function (d) {
+                return y1(+d.Rank)
+              })
+            )
+            .attr('stroke', function (d) {
+              currentColor = myColor(countries[index]);
+
+              return currentColor;
+            })
+            .style("stroke-width", 5)
+            .style("fill", "none")
+
+
+          svg.select('.plot-area').append("g")
+            .selectAll(".symbol")
+            .data(eachCountryData)
+            .enter().append("foreignObject")
+            .attr("class", "point")
+            .style("background-color", currentColor)
+            .attr("x", function (d) {
+              if (+d.Rank) {
+                return x(d.Year)
+              }
+              else return
+            })
+            .attr("y", function (d) {
+              return y1(+d.Rank)
+
+            })
+            .attr("width", 4)
+            .attr("height", 4)
+            .append("xhtml:div")
+
+          svg.select('.plot-area').append("g")
+            .selectAll(".symbol")
+            .data(eachCountryData)
+            .enter().append("foreignObject")
+            .attr("class", "flagParent")
+            .attr("x", function (d) {
+              if (+d.Rank) {
+                return x(+d.Year)
+              }
+              else return
+            })
+            .attr("y", function (d) {
+              return y1(+d.Rank)
+
+            })
+            .attr("width", 16)
+            .attr("height", 16)
+            .append("xhtml:div")
+            .attr("class", "flagDiv")
+            .html(`<img
+                  src='https://www.countryflagicons.com/FLAT/16/${flagIcon}.png'
+                  style="border-radius: 50% "
+                />`)
+
+
+
+
+          svg.select('.plot-area').append("g")
+            .selectAll(".symbol")
+            .data(eachCountryData)
+            .enter()
+            .append("circle")
+            .attr("cx", d => x(+d.Year))
+            .attr("cy", d => y1(+d.Rank))
+            .attr("r", 5)
+            .attr("class", 'pointer')
+            .style('opacity', '0')
+            .style("cursor", "pointer")
+            .attr("fill", currentColor)
+            .on("mouseover", (event, d) => {
+              // Show the tooltip on mouseover
+              const tooltip = tooltipRef.current
+              event.target.style = 'opacity:1'
+              tooltip.style.display = "block";
+              tooltip.style.color = "black";
+              
+              tooltip.style.left = event.screenX -70+ "px";
+              tooltip.style.top = event.pageY - 170 + "px";
+              // tooltip.style.left = event.target.cx.baseVal.value-80 + "px";
+              // tooltip.style.top = event.target.cy.baseVal.value - 100+ "px";
+              tooltip.innerHTML = `<p>Country:${d.Country}</p><p> Year: ${d.Year}</p><p> Rank: ${d.Rank}</p>`;
+              // console.log(`Country:${d.country} Date: ${d.Year} Value: ${d.Rank}` );
+            })
+            .on("mouseout", (event) => {
+              // Hide the tooltip on mouseout
+              event.target.style = 'opacity:0'
+
+              const tooltip = tooltipRef.current
+              tooltip.style.display = "none";
+            });
+
+          
+
+
+        })
+
+    },
+    [data]
+  );
+  return (
+    <div className='relative'>
+      <div ref={tooltipRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
+
+      <svg
+        ref={ref}
+        style={{
+          height: 190,
+          width: "94rem",
+          marginRight: "0px",
+          marginLeft: "0px",
+        }}
+      >
+        <g className="plot-area"   style={{
+        width: "100%",overflow:'auto'}}/>
+
+        <g className="x-axis" />
+        <g className="y-axis" />
+      </svg>
+    </div>
+  )
+}
+
+export default RankD3

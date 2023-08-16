@@ -1,0 +1,58 @@
+.axis-grid line {
+    stroke: #2C3645;
+    transform: translateX(3.5%);
+}
+.axis-grid.amount line{
+    
+    transform: translateX(11%);
+
+}
+g.tick line{
+    stroke: #2C3645 !important;
+    stroke-width: 1;
+}
+.newclass.rank{
+    stroke-width: 2.5;
+}
+
+.point{
+    /* background-color: #000; */
+    border-radius: 50%;
+    transform: translate(0, -2.5px);
+
+}
+.point:first-child{
+    display: none;
+}
+.point:last-child{
+    display: none;
+}
+
+
+.flagParent {
+    transform: translate(-14px, -8px);
+    display: none;
+    
+}
+.pointer{
+    cursor: pointer;
+}
+.flagParent .flagDiv{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.flagParent .flagDiv img{
+    width: 100%;
+    height: 110%;
+}
+.flagParent:first-child {
+    display: block;
+}
+
+.flagParent:last-child {
+    transform: translate(-5px, -8px);
+
+    display: block;
+}
