@@ -5,7 +5,7 @@ div[class*="ValueContainer"]{
     
 }
 div[class*="control"]{
-    height: 2rem;
+    height: 2rem !important;
     overflow: auto;
     padding: 0 !important;
     
