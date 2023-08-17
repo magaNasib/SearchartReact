@@ -7,7 +7,7 @@ div[class*="ValueContainer"]{
 div[class*="control"]{
     height: 2rem;
     overflow: auto;
-    padding: 0 ;
+    padding: 0 !important;
     
 }
 div[class*="IndicatorsContainer"]{
@@ -15,6 +15,9 @@ div[class*="IndicatorsContainer"]{
 }
 div[class*="1wy0on6"]{
     display: none !important;
+}
+div[class*="9jq23d"]{
+    color: white !important;
 }
 
 div[class*="indicatorSeparator"]{
