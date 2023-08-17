@@ -1,6 +1,5 @@
 .headingTable {
     padding: .3rem;
-    background: #0D1F3D;
     border-top-left-radius: .4rem;
     font-size: .9rem;
     height: 20%;
@@ -13,7 +12,6 @@
 .bodyTable {
     border-bottom-left-radius: 0.375rem;
     border-bottom-right-radius: 0.375rem;
-    background: #051124;
     height: 80%;
     overflow: auto;
     padding: .5rem;
@@ -42,7 +40,6 @@
 .rangeYearsBtns select {
     border-radius: 0.4375rem;
     border: 1px solid #172E55;
-    background: #051124;
     width: 80%;
     padding: .2rem;
     text-align: center;

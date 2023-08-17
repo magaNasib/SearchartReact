@@ -39,11 +39,11 @@ function AmountTable({ filters, isChart }) {
     return (
         <>
             <div className='w-35'>
-                <div className='headingTable'>
+                <div className='headingTable  bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
                     {filters.indicator} in {filters.year} year
                     {/* Gross Domestic Product billions of U.S. dollars in 2021 year */}
                 </div>
-                <div className='bodyTable scrollStyled relative'>
+                <div className='bodyTable scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000000] dark:text-[#fff] relative'>
                 <div ref={spanPercentageRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
 
                     <table className={`table-auto w-full text-right amountTable ${!isChart && 'modeTable'}`}>

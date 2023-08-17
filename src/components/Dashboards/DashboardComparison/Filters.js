@@ -78,7 +78,7 @@ function Filters({setFilters}) {
 
             {/* SECTOR */}
 
-            <div className={classes.filterCard} style={{ width: '12%' }}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '12%' }}>
                 <span>
                     Sector
                 </span>
@@ -99,7 +99,7 @@ function Filters({setFilters}) {
 
             {/* Subsector */}
 
-            <div className={classes.filterCard}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`}>
                 <span>
                     Subsector
                 </span>
@@ -120,7 +120,7 @@ function Filters({setFilters}) {
 
             {/* iNDICATOR */}
 
-            <div className={classes.filterCard} style={{ width: '20%' }}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '20%' }}>
                 <span>
                     Indicator
                 </span>
@@ -146,7 +146,7 @@ function Filters({setFilters}) {
             {/* Country */}
 
 
-            <div className={classes.filterCard}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`}>
                 <span>
                     Country
                 </span>
@@ -157,14 +157,14 @@ function Filters({setFilters}) {
 
 
             {/* Year */}
-            <div className={classes.filterCard} style={{ width: '7%' }}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '7%' }}>
                 <span>
                     Year
                 </span>
                 <Years choosenData={choosenData} onChangeYear={setChoosenData} />
 
             </div>
-            <div className={classes.filterCard} style={{ width: '25%' }}>
+            <div className={`${classes.filterCard} dark:bg-[#293F64] bg-[##FFFFFF] shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '25%' }}>
                 <span>
                     Rank
                 </span>

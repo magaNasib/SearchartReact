@@ -27,7 +27,7 @@ function RankDifference({ filters }) {
                 });
         }
         getAmounts()
-    }, [filters]);
+    }, [filters,data.length]);
 
 
     useEffect(() => {
@@ -72,13 +72,13 @@ function RankDifference({ filters }) {
     }
     return (
         <div className='w-30'>
-            <div className='headingTable'>
+                <div className='headingTable  bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
                 Difference in rank between years
             </div>
 
-            <div className='bodyTable scrollStyled'>
+            <div className='bodyTable scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000000] dark:text-[#fff]'>
                 <div className='rangeYearsBtns flex justify-between gap-6'>
-                    <select className='scrollStyled' value={choosenYears.first_year} onChange={(e) => { onChangeYear(e, 'first_year') }}>
+                    <select className='scrollStyled dark:bg-[#051124] bg-[#fff]' value={choosenYears.first_year} onChange={(e) => { onChangeYear(e, 'first_year') }}>
                         {years && years.map((year, index) => {
                             return (
                                 <option key={index} value={year}>
@@ -87,7 +87,7 @@ function RankDifference({ filters }) {
                             )
                         })}
                     </select>
-                    <select className='scrollStyled' value={choosenYears.second_year} onChange={(e) => { onChangeYear(e, 'second_year') }}>
+                    <select className='scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000] dark:text-[#A7B4CA]' value={choosenYears.second_year} onChange={(e) => { onChangeYear(e, 'second_year') }}>
                         {years && years.map((year, index) => {
                             return (
                                 <option key={index} value={year}>

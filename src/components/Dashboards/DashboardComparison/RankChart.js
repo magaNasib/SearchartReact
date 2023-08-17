@@ -19,7 +19,7 @@ function RankChart({ filters, isChart }) {
                 });
         }
         getAmountDataByAllYears()
-    }, [filters,data.length]);
+    }, [filters, data.length]);
 
     const getYearsInArray = (min, max) => {
         let data = []
@@ -34,11 +34,11 @@ function RankChart({ filters, isChart }) {
     return (
         <div className='w-full h-full relative'>
 
-            <div className='headingTable'>
+            <div className='headingTable  bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
                 Gross Domestic Product billions of U.S. dollars over years
 
             </div>
-            <div className='bodyTable scrollStyled'>
+            <div className='bodyTable scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000000] dark:text-[#fff]'>
 
                 {!isChart &&
                     <><p className='-rotate-90 absolute top-1/2 z-10 -left-4 rotated'>
