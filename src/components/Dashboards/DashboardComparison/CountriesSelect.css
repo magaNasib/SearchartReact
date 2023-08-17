@@ -5,8 +5,16 @@ div[class*="ValueContainer"]{
     
 }
 div[class*="IndicatorsContainer"]{
-    display: none;
+    display: none !important;
 }
+div[class*="1wy0on6"]{
+    display: none !important;
+}
+
+div[class*="indicatorSeparator"]{
+    display: none  !important;
+opacity: 0;
+}  
 
 div[class*="multiValue"]{
     background: none !important;
