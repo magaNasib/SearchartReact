@@ -4,6 +4,12 @@ div[class*="ValueContainer"]{
     padding: 0 ;
     
 }
+div[class*="control"]{
+    height: 2rem;
+    overflow: auto;
+    padding: 0 ;
+    
+}
 div[class*="IndicatorsContainer"]{
     display: none !important;
 }
