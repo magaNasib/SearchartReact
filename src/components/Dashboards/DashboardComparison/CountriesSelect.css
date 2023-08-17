@@ -5,7 +5,7 @@ div[class*="ValueContainer"]{
     
 }
 div[class*="control"]{
-    height: 2rem !important;
+    height: 2.25rem !important;
     overflow: auto;
     padding: 0 !important;
     
@@ -46,7 +46,7 @@ div[class*="control"]{
     background: #293F64;
     color: #A7B4CA !important;
 }
-#react-select-3-listbox{
+#react-select-2-listbox{
     background-color: #293F64;
 }
 #react-select-3-listbox>div::-webkit-scrollbar
