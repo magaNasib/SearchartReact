@@ -19,7 +19,7 @@ function RankChart({ filters, isChart }) {
                 });
         }
         getAmountDataByAllYears()
-    }, [filters.country,filters.ranks,data.length]);
+    }, [filters,data.length]);
 
     const getYearsInArray = (min, max) => {
         let data = []
