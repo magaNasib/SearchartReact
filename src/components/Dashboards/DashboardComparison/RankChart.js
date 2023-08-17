@@ -4,7 +4,7 @@ import './Charts.css'
 import RankD3 from './RankD3';
 function RankChart({ filters, isChart }) {
 
-    const url = `http://searchart.pythonanywhere.com/api/years_data/?year1=${filters.year}&ranks=${filters.ranks}&indicator=${filters.indicator}&countries=${filters.country}`
+    const url = `https://searchart.pythonanywhere.com/api/years_data/?year1=${filters.year}&ranks=${filters.ranks}&indicator=${filters.indicator}&countries=${filters.country}`
     const [data, setData] = useState([])
 
     useEffect(() => {

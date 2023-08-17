@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Years.css'
 function Years({ choosenData, onChangeYear }) {
     const [data, setData] = useState([])
-    const url = `http://searchart.pythonanywhere.com/api/available-years/?indicator=${choosenData.indicator}&countries=${choosenData.country}`;
+    const url = `https://searchart.pythonanywhere.com/api/available-years/?indicator=${choosenData.indicator}&countries=${choosenData.country}`;
 
 
     useEffect(() => {

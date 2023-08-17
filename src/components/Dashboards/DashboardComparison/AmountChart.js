@@ -4,7 +4,7 @@ import AmountD3 from './AmountD3'
 
 function AmountChart({ filters, isChart }) {
 
-    const url = `http://searchart.pythonanywhere.com/api/years_data/?year1=${filters.year}&ranks=${filters.ranks}&indicator=${filters.indicator}&countries=${filters.country}`
+    const url = `https://searchart.pythonanywhere.com/api/years_data/?year1=${filters.year}&ranks=${filters.ranks}&indicator=${filters.indicator}&countries=${filters.country}`
     const [data, setData] = useState([])
 
 

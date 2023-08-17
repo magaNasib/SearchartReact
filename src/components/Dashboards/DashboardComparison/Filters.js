@@ -20,7 +20,7 @@ function Filters({setFilters}) {
         ranks: [1, 10]
     })
 
-    const url = "http://searchart.pythonanywhere.com/api/";
+    const url = "https://searchart.pythonanywhere.com/api/";
 
     useEffect(() => {
         fetch(url)

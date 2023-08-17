@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function RankDifference({ filters }) {
     const url_data = `https://searchart.pythonanywhere.com/api/rank_diff/?year1=${filters.year}&indicator=${filters.indicator}&countries=${filters.country}`
 
-    const url_years = `http://searchart.pythonanywhere.com/api/available-years/?indicator=${filters.indicator}&countries=${filters.country}`;
+    const url_years = `https://searchart.pythonanywhere.com/api/available-years/?indicator=${filters.indicator}&countries=${filters.country}`;
 
     const [years, setYears] = useState([])
     const [data, setData] = useState([])

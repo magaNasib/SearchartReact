@@ -3,7 +3,7 @@ import Slider from 'react-slider';
 import './RankSlider.css'
 const PriceSlider = ({ choosenData, setChoosenData }) => {
 
-    const url = `http://searchart.pythonanywhere.com/api/ranks/?indicator=${choosenData.indicator}&year=${choosenData.year}`;
+    const url = `https://searchart.pythonanywhere.com/api/ranks/?indicator=${choosenData.indicator}&year=${choosenData.year}`;
     const [data, setData] = useState([])
 
     useEffect(() => {

@@ -119,9 +119,8 @@ function AmountD3({ data, countries }) {
               event.target.style = 'opacity:1'
               tooltip.style.display = "block";
               tooltip.style.color = "black";
-              console.log(event);
               tooltip.style.left = event.screenX -70+ "px";
-              tooltip.style.top = event.pageY -40 + "px";
+              tooltip.style.top = event.pageY +20 + "px";
               tooltip.innerHTML = `<p>Country:${d.Country}</p><p> Year: ${d.Year}</p><p> Amount: ${d.Amount}</p>`;
               // console.log(`Country:${d.country} Date: ${d.Year} Value: ${d.Rank}` );
             })

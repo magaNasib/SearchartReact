@@ -5,7 +5,7 @@ import './CountriesSelect.css'
 
 const CountriesSelect = props => {
 
-    const url = `http://searchart.pythonanywhere.com/api/countries-data/${props.choosenData.indicator}/`;
+    const url = `https://searchart.pythonanywhere.com/api/countries-data/${props.choosenData.indicator}/`;
     const [data, setData] = useState([]);
 
     let allCountries = [{ label: '', value: '' }]

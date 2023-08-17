@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './AmountTable.css'
 import { useRef } from 'react'
 function AmountTable({ filters, isChart }) {
-    const url = `http://searchart.pythonanywhere.com/api/by_amount/?indicator=${filters.indicator}&countries=${filters.country}&year1=${filters.year}&ranks=${filters.ranks}`
+    const url = `https://searchart.pythonanywhere.com/api/by_amount/?indicator=${filters.indicator}&countries=${filters.country}&year1=${filters.year}&ranks=${filters.ranks}`
     const [data, setData] = useState([])
     const spanPercentageRef = useRef()
     useEffect(() => {
