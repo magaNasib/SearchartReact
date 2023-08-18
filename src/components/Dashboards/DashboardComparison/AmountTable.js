@@ -25,11 +25,11 @@ function AmountTable({ filters, isChart }) {
         // event.target.style = 'opacity:1'
         tooltip.style.display = "block";
         tooltip.style.color = "black";
-        tooltip.style.left = event.nativeEvent.clientX+ "px";
-        tooltip.style.top = event.nativeEvent.clientY+ 20 + "px";
+        tooltip.style.left = event.nativeEvent.clientX + "px";
+        tooltip.style.top = event.nativeEvent.clientY + 20 + "px";
         tooltip.innerHTML = `<p>Country:${d.country}</p><p> Year: ${d.year}</p><p> Amount: ${d.amount}</p>`;
     }
-    const onMouseOutSpan=(e)=>{
+    const onMouseOutSpan = (e) => {
         const tooltip = spanPercentageRef.current
         tooltip.style.display = "none";
     }
@@ -44,7 +44,7 @@ function AmountTable({ filters, isChart }) {
                     {/* Gross Domestic Product billions of U.S. dollars in 2021 year */}
                 </div>
                 <div className='bodyTable scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000000] dark:text-[#fff] relative'>
-                <div ref={spanPercentageRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
+                    <div ref={spanPercentageRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
 
                     <table className={`table-auto w-full text-right amountTable ${!isChart && 'modeTable'}`}>
                         <thead>
@@ -62,7 +62,7 @@ function AmountTable({ filters, isChart }) {
                                     let amountByPercentage = ((+eachCountry.amount - +data.min_amount) / (+data.max_amount - +data.min_amount)) * 100;
 
                                     return (
-                                        <tr key={Math.random()}>
+                                        <tr key={Math.random()} className={!isChart && 'dark:even:bg-[#152134]'}>
                                             <td>{eachCountry.rank}</td>
                                             <td>
                                                 <div>
@@ -72,12 +72,12 @@ function AmountTable({ filters, isChart }) {
                                                 </div>
                                             </td>
                                             <td>
-                                                {isChart ? <span onMouseMove={(e) => onMouseMoveSpan(e, eachCountry)} 
-                                                onMouseOut={onMouseOutSpan}
-                                                className='parentProgress cursor-pointer dark:bg-[#253041] bg-[#D9D9D9]'>
+                                                {isChart ? <span onMouseMove={(e) => onMouseMoveSpan(e, eachCountry)}
+                                                    onMouseOut={onMouseOutSpan}
+                                                    className='parentProgress cursor-pointer dark:bg-[#253041] bg-[#D9D9D9]'>
                                                     <span style={{ width: amountByPercentage + '%', background: amountByPercentage > 50 ? '#265D7E' : '#87A6B8' }} className='childProgress'>
                                                     </span>
-                                                </span> :<span className=''>{ +eachCountry.amount.toFixed(2)}</span>}
+                                                </span> : <span className=''>{+eachCountry.amount.toFixed(2)}</span>}
                                             </td>
                                         </tr>
                                     )

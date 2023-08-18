@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from "react";
-import ReactSelect from "react-select";
+import Select from "react-select";
 import './CountriesSelect.css'
 
 const CountriesSelect = props => {
@@ -90,16 +90,24 @@ const CountriesSelect = props => {
             props.onChange(newValue || [], actionMeta);
         }
     };
+    const valueContainerStyles = "dark:bg-[#293F64] dark:border-[#4A628A] h-full dark:text-[#A7B4CA] text-[#000]";
+
 
     return (
-        <ReactSelect
+        <Select
             isOptionSelected={isOptionSelected}
             options={getOptions()}
             value={getValue()}
             onChange={onChange}
             hideSelectedOptions={false}
             closeMenuOnSelect={false}
+            className="react-select-container bg-red"
             isMulti
+            classNames={{
+                control: () => "border-none",
+                valueContainer: () => valueContainerStyles,
+                multiValue: () => 'dark:text-[#000]',
+              }}
         />
     );
 };

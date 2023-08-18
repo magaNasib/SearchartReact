@@ -53,7 +53,7 @@ function RankChart({ filters, isChart }) {
                                 {data && data.countries_data && countriesByYears.map((item) => {
                                     return item.country[0] &&
                                         (
-                                            <p key={Math.random()}>
+                                            <p key={Math.random()} className='dark:odd:bg-[#152134]'>
 
                                                 {item.country[0].Country}
                                                 <img alt={item.country[0].Country} src={`https://www.countryflagicons.com/FLAT/16/${item.country[0].Country_code_2}.png`} className='flagIcon' />
@@ -78,7 +78,7 @@ function RankChart({ filters, isChart }) {
                                     {
                                         data && data.countries_data && countriesByYears.map((country, index) => {
                                             let j = 0;
-                                            return <tr key={Math.random()}>
+                                            return <tr key={Math.random()} className={!isChart &&  'dark:even:bg-[#152134]'}>
                                                 {years.map((year, index) => {
                                                     let isValid = typeof (country.country[index - j]) != 'undefined'
                                                     if (isValid && year === country.country[index - j].Year) {

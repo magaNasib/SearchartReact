@@ -78,7 +78,7 @@ function Filters({setFilters}) {
 
             {/* SECTOR */}
 
-            <div className={`${classes.filterCard} shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`} style={{ width: '12%' }}>
+            <div className={`${classes.filterCard} shadow-[#868686]  dark:text-[#A7B4CA] text-[#292929]`} style={{ width: '12%' }}>
                 <span>
                     Sector
                 </span>

@@ -65,11 +65,7 @@
     text-align: right;
 }
 
-.countrySheet p:nth-child(odd) {
-    background: #152134;
 
-
-}
 
 .countrySheet span {
     padding: .2rem 0;
@@ -91,10 +87,6 @@ table tr td:last-child {
     border-bottom-right-radius: .375rem;
 }
 
-table.modeTable tr:nth-child(even) {
-
-    background: #152134;
-}
 
 
 thead.years th:first-child {
