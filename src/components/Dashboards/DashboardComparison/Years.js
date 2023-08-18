@@ -4,7 +4,6 @@ function Years({ choosenData, onChangeYear }) {
     const [data, setData] = useState([])
     const url = `https://searchart.pythonanywhere.com/api/available-years/?indicator=${choosenData.indicator}&countries=${choosenData.country}`;
 
-
     useEffect(() => {
         async function getYears() {
             await fetch(url)
@@ -21,7 +20,7 @@ function Years({ choosenData, onChangeYear }) {
     return (
 
         <div>
-            <select className='scrollStyled' value={choosenData.year} onChange={(e) => { onChangeYear((prevData) => { return { ...prevData, year: e.target.value } }) }}>
+            <select className='scrollStyled dark:bg-[#293F64] bg-[#FFFFFF] dark:text-[#A7B4CA] text-[#454545]' value={choosenData.year} onChange={(e) => { onChangeYear((prevData) => { return { ...prevData, year: e.target.value } }) }}>
                 {data && data.map((year, index) => {
                     return (
                         <option key={index} value={year}>

@@ -32,9 +32,9 @@ function RankChart({ filters, isChart }) {
     let years = data ? getYearsInArray(data.year1, data.year2) : [];
 
     return (
-        <div className='w-full h-full relative'>
+        <div className='w-full h-full relative z-0'>
 
-            <div className='headingTable  bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
+            <div className='headingTable z-0 bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
                 Gross Domestic Product billions of U.S. dollars over years
 
             </div>
@@ -44,13 +44,13 @@ function RankChart({ filters, isChart }) {
                     <><p className='-rotate-90 absolute top-1/2 z-10 -left-4 rotated'>
                         Country
                     </p>
-                        <p className='text-center sticky top-0 left-0'>Years</p>
+                        <p className='text-center sticky top-0 left-0 bg-[#fff] dark:bg-[#051124] z-50'>Years</p>
 
                         <div className='flex relative items-start '>
-                            <div className='sticky top-0 left-0 countrySheet '>
+                            <div className='sticky top-0 left-0 countrySheet dark:bg-[#051124] bg-[#fff]'>
                                 <span>&nbsp;</span>
 
-                                {data && countriesByYears.map((item) => {
+                                {data && data.countries_data && countriesByYears.map((item) => {
                                     return item.country[0] &&
                                         (
                                             <p key={Math.random()}>
@@ -65,7 +65,7 @@ function RankChart({ filters, isChart }) {
 
                             <table className="table-auto w-full text-right modeTable">
 
-                                <thead className='years'>
+                                <thead className='years dark:bg-[#0D1F3D] bg-[#EDEDED]'>
                                     <tr>
                                         {
                                             years && years.map((year, index) => {
@@ -74,9 +74,9 @@ function RankChart({ filters, isChart }) {
                                         }
                                     </tr>
                                 </thead>
-                                <tbody className='text-right'>
+                                <tbody className='text-right text-[#727272]'>
                                     {
-                                        countriesByYears.map((country, index) => {
+                                        data && data.countries_data && countriesByYears.map((country, index) => {
                                             let j = 0;
                                             return <tr key={Math.random()}>
                                                 {years.map((year, index) => {

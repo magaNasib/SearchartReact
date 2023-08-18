@@ -17,9 +17,11 @@
     padding: .5rem;
     box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
 }
-.h-90{
+
+.h-90 {
     height: 89%;
 }
+
 .bodyTable table {
     width: 100%;
 }
@@ -30,8 +32,9 @@
 
 .bgCharts {
     padding: .4rem 0;
-    background-image: url('../../../assets/bgChart.png');
 }
+
+
 
 .h-40vh {
     height: 40vh;
@@ -47,10 +50,10 @@
 }
 
 .countrySheet {
-    background-color: #051124;
     padding: 0 0rem 0 2rem;
     min-width: 15rem;
-    left: -.5rem
+    left: -.5rem;
+    z-index: 5;
 }
 
 .countrySheet p {
@@ -68,10 +71,11 @@
 
 }
 
-.countrySheet span{
+.countrySheet span {
     padding: .2rem 0;
     display: block;
 }
+
 table td {
 
     padding: .1rem .5rem;
@@ -92,19 +96,19 @@ table.modeTable tr:nth-child(even) {
     background: #152134;
 }
 
-thead.years{
-background: #0D1F3D;
-}
-thead.years th:first-child{
+
+thead.years th:first-child {
     border-top-left-radius: .375rem;
     border-bottom-left-radius: .375rem;
-    
+
 }
-thead.years th:last-child{
-    
+
+thead.years th:last-child {
+
     border-top-right-radius: .375rem;
     border-bottom-right-radius: .375rem;
 }
-thead.years th{
+
+thead.years th {
     padding: .2rem .5rem;
 }

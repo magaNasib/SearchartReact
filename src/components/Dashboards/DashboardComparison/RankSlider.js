@@ -29,6 +29,7 @@ const PriceSlider = ({ choosenData, setChoosenData }) => {
                 type="text"
                 id="minPrice"
                 value={values[0]}
+                className='dark:bg-[#051124] bg-[#fff] text-[#504E4E] dark:text-[#A7B4CA] border-[#CECECE]'
                 onChange={(e) => {
 
                     handleChange([+e.target.value, values[1]])
@@ -47,6 +48,8 @@ const PriceSlider = ({ choosenData, setChoosenData }) => {
             <input
                 type="text"
                 id="maxPrice"
+                    className='dark:bg-[#051124] bg-[#fff] text-[#504E4E] dark:text-[#A7B4CA] border-[#CECECE]'
+
                 value={values[1]}
                 onChange={(e) => {
                     handleChange([values[0], +e.target.value])

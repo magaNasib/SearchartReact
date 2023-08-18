@@ -50,7 +50,6 @@ function AmountD3({ data, countries }) {
       const y1Axis = (g) =>
         g
           .attr("transform", `translate(${margin.left},0)`)
-          .style("color", "white")
           .call(d3.axisLeft(y1).ticks(4, "s"))
           .call((g) => g.select(".domain").remove())
           .call((g) =>
@@ -58,17 +57,17 @@ function AmountD3({ data, countries }) {
               .append("text")
               .attr("x", -margin.left)
               .attr("y", 10)
-              .attr("fill", "currentColor")
               .attr("text-anchor", "start")
               .text(data.y1)
           );
 
       svg.select(".x-axis").call(xAxis);
       svg.select(".y-axis").call(y1Axis);
+
       svg.select('.plot-area').append('g')
-        .attr('class', 'y axis-grid amount')
         .attr('transform', 'translate(0,0)')
         .attr('stroke-width', '0')
+        .attr('class', 'y axis-grid amount dark:text-[#2c3645] text-[#D9D9D9]')
         .call(yAxisGridAmount);
       data
         && data.countries_data
@@ -141,7 +140,7 @@ function AmountD3({ data, countries }) {
   );
   return (
     <div>
-      <div ref={tooltipRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
+      <div ref={tooltipRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-100 bg-gray-100 rounded-2xl"></div>
 
       <svg
         ref={ref}
@@ -156,8 +155,8 @@ function AmountD3({ data, countries }) {
         <g className="plot-area" style={{
           width: "100%", overflow: 'auto'
         }} />
-        <g className="x-axis" />
-        <g className="y-axis" />
+        <g className="x-axis text-[#000] dark:text-[#fff]" />
+        <g className="y-axis  text-[#000] dark:text-[#fff]" />
       </svg>
     </div>
   )

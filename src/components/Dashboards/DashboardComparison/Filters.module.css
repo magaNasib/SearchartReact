@@ -2,7 +2,6 @@
     display: flex;
     gap: .4rem;
     flex-direction: column;
-    color: #A7B4CA;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -12,7 +11,10 @@
 
 .filterCard select {
     border-radius: 0.4375rem;
-    border: 1px solid #4A628A;
+    box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
+
+
+    /* border: 1px solid ; */
     /* width: 10.625rem; */
     padding: .3rem;
 

@@ -13,8 +13,7 @@ function App() {
       <Header>
         {/* <Navbar/> */}
       </Header>
-      <main>
-
+      <main className='bg-[#F6F6F8] dark:bg-[#09101B]' >
         <DashComparison />
 
         {/* <Sectors/>

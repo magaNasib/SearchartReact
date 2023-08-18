@@ -42,8 +42,7 @@
     flex-shrink: 0;
 
     border-radius: 0.375rem;
-    border: 1px solid #2C3645;
-    background: #051124
+    border: 1px solid ;
 }
 .RankSlider input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

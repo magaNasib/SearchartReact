@@ -51,7 +51,6 @@ function RankD3({ data, countries }) {
       const y1Axis = (g) =>
         g
           .attr("transform", `translate(${margin.left},0)`)
-          .style("color", "white")
           .call(d3.axisLeft(y1).ticks(10, "s"))
           .call((g) => g.select(".domain").remove())
           .call((g) =>
@@ -69,13 +68,13 @@ function RankD3({ data, countries }) {
 
 
       svg.select('.plot-area').append('g')
-        .attr('class', 'y axis-grid')
+        .attr('class', 'y axis-grid dark:text-[#2c3645] text-[#D9D9D9]')
         .attr('transform', 'translate(0,0)')
         .attr('stroke-width', '0')
         .call(yAxisGridAmount);
 
       svg.select('.plot-area').append('g')
-        .attr('class', 'x axis-grid')
+        .attr('class', 'x axis-grid dark:text-[#2c3645] text-[#D9D9D9]')
         .attr('transform', 'translate(-30,' + (height - 30) + ')')
         .attr('stroke-width', '0')
         .call(xAxisGrid);
@@ -89,7 +88,7 @@ function RankD3({ data, countries }) {
           let flagIcon = ''
 
           svg.select(".plot-area").append('path')
-            .attr("class", "newclass rank") 
+            .attr("class", "newclass rank")
             .datum(eachCountryData)
             .transition()
             .duration(1000)
@@ -178,8 +177,8 @@ function RankD3({ data, countries }) {
               event.target.style = 'opacity:1'
               tooltip.style.display = "block";
               tooltip.style.color = "black";
-              
-              tooltip.style.left = event.screenX -70+ "px";
+
+              tooltip.style.left = event.screenX - 70 + "px";
               tooltip.style.top = event.pageY - 170 + "px";
               // tooltip.style.left = event.target.cx.baseVal.value-80 + "px";
               // tooltip.style.top = event.target.cy.baseVal.value - 100+ "px";
@@ -194,7 +193,7 @@ function RankD3({ data, countries }) {
               tooltip.style.display = "none";
             });
 
-          
+
 
 
         })
@@ -204,7 +203,7 @@ function RankD3({ data, countries }) {
   );
   return (
     <div className='relative'>
-      <div ref={tooltipRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
+      <div ref={tooltipRef} className="hidden fixed pointer-events-none z-4  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-40 bg-gray-100 rounded-2xl"></div>
 
       <svg
         ref={ref}
@@ -215,11 +214,12 @@ function RankD3({ data, countries }) {
           marginLeft: "0px",
         }}
       >
-        <g className="plot-area"   style={{
-        width: "100%",overflow:'auto'}}/>
+        <g className="plot-area" style={{
+          width: "100%", overflow: 'auto'
+        }} />
 
-        <g className="x-axis" />
-        <g className="y-axis" />
+        <g className="x-axis text-[#000] dark:text-[#fff]" />
+        <g className="y-axis  text-[#000] dark:text-[#fff]" />
       </svg>
     </div>
   )

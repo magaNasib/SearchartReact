@@ -78,11 +78,11 @@ function Filters({setFilters}) {
 
             {/* SECTOR */}
 
-            <div className={`${classes.filterCard} shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '12%' }}>
+            <div className={`${classes.filterCard} shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`} style={{ width: '12%' }}>
                 <span>
                     Sector
                 </span>
-                <select onChange={(e) => { handleClick(e, 'sector') }} value={choosenData.sector}>
+                    <select onChange={(e) => { handleClick(e, 'sector') }} value={choosenData.sector}  className='dark:text-[#A7B4CA] text-[#454545] dark:bg-[#293F64] bg-[#FFFFFF] '>
                     {data && data.sectors && Object.keys(data.sectors).map((sector, index) => {
                         return (
                             <option key={index} value={sector}>
@@ -99,11 +99,11 @@ function Filters({setFilters}) {
 
             {/* Subsector */}
 
-            <div className={`${classes.filterCard}  shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`}>
+            <div className={`${classes.filterCard}   shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`}>
                 <span>
                     Subsector
                 </span>
-                <select onChange={(e) => { handleClick(e, 'subSector') }} value={choosenData.subSector}>
+                <select onChange={(e) => { handleClick(e, 'subSector') }} value={choosenData.subSector}   className='dark:bg-[#293F64] bg-[#FFFFFF] dark:text-[#A7B4CA] text-[#454545]'>
                     {data.sectors && data.sectors[choosenData.sector] && Object.keys(data.sectors[choosenData.sector]).map((subSector, index) => {
                         return (
                             <option key={index} value={subSector}>
@@ -120,11 +120,11 @@ function Filters({setFilters}) {
 
             {/* iNDICATOR */}
 
-            <div className={`${classes.filterCard} shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`} style={{ width: '20%' }}>
+            <div className={`${classes.filterCard} shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`} style={{ width: '20%' }}>
                 <span>
                     Indicator
                 </span>
-                <select onChange={(e) => { handleClick(e, 'indicator') }} value={choosenData.indicator}>
+                <select onChange={(e) => { handleClick(e, 'indicator') }} value={choosenData.indicator}  className='dark:bg-[#293F64] bg-[#FFFFFF] dark:text-[#A7B4CA] text-[#454545]'>
                     {data.sectors && data.sectors[choosenData.sector][choosenData.subSector]
                         && data.sectors[choosenData.sector][choosenData.subSector].map((indicator, index) => {
 
@@ -146,7 +146,7 @@ function Filters({setFilters}) {
             {/* Country */}
 
 
-            <div className={`${classes.filterCard}  shadow-[#868686] dark:text-[#A7B4CA] text-[#454545]`}>
+            <div className={`${classes.filterCard}  shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`}>
                 <span>
                     Country
                 </span>
@@ -157,7 +157,7 @@ function Filters({setFilters}) {
 
 
             {/* Year */}
-            <div className={`${classes.filterCard}  shadow-[#868686] dark:text-[#A7B4CA] text-[#000000]`} style={{ width: '7%' }}>
+            <div className={`${classes.filterCard}  shadow-[#868686] dark:text-[#A7B4CA] text-[#292929]`} style={{ width: '7%' }}>
                 <span>
                     Year
                 </span>

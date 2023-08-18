@@ -10,6 +10,9 @@ div[class*="control"]{
     padding: 0 !important;
     
 }
+div[class*="-container"] {
+    z-index: 5 !important;
+}
 div[class*="IndicatorsContainer"]{
     display: none !important;
 }
@@ -48,6 +51,11 @@ div[class*="control"]{
 }
 #react-select-2-listbox{
     background-color: #293F64;
+    /* z-index: 5; */
+}
+#react-select-3-listbox{
+    z-index: 5;
+    display: block !important;
 }
 #react-select-3-listbox>div::-webkit-scrollbar
 {

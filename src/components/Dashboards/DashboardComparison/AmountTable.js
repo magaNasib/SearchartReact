@@ -74,10 +74,10 @@ function AmountTable({ filters, isChart }) {
                                             <td>
                                                 {isChart ? <span onMouseMove={(e) => onMouseMoveSpan(e, eachCountry)} 
                                                 onMouseOut={onMouseOutSpan}
-                                                className='parentProgress cursor-pointer'>
+                                                className='parentProgress cursor-pointer dark:bg-[#253041] bg-[#D9D9D9]'>
                                                     <span style={{ width: amountByPercentage + '%', background: amountByPercentage > 50 ? '#265D7E' : '#87A6B8' }} className='childProgress'>
                                                     </span>
-                                                </span> : +eachCountry.amount.toFixed(2)}
+                                                </span> :<span className=''>{ +eachCountry.amount.toFixed(2)}</span>}
                                             </td>
                                         </tr>
                                     )

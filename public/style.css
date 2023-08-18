@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 0;
 }
 html{
     font-size: 14px;
@@ -14,12 +15,8 @@ body{
     font-family: myFirstFont;
 }
 
-body{
-    background:  #09101B;
-}
 
 main{
-    background-image: url('./Vector.png'), url('./Vector2.png');
     width: 100%;
     background-repeat: no-repeat;
     background-position: right top, center bottom;
@@ -39,7 +36,7 @@ main{
 	width: 6px;
     height: 6px;
     border-radius: 3px;
-    border: 1px solid #2C3645;
+    /* border: 1px solid #2C3645; */
     
     
 }
