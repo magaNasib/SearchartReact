@@ -32,16 +32,16 @@ function RankChart({ filters, isChart }) {
     let years = data ? getYearsInArray(data.year1, data.year2) : [];
 
     return (
-        <div className='w-full h-full relative z-0'>
+        <div className='w-full h-full relative'>
 
-            <div className='headingTable z-0 bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
+            <div className='headingTable bg-[#EDEDED] dark:bg-[#0d1f3d] text-[#454545] dark:text-[#A7B4CA]' >
                 Gross Domestic Product billions of U.S. dollars over years
 
             </div>
             <div className='bodyTable scrollStyled dark:bg-[#051124] bg-[#fff] text-[#000000] dark:text-[#fff]'>
 
                 {!isChart &&
-                    <><p className='-rotate-90 absolute top-1/2 z-10 -left-4 rotated'>
+                    <><p className='-rotate-90 absolute top-1/2 z-1 -left-4 rotated'>
                         Country
                     </p>
                         <p className='text-center sticky top-0 left-0 bg-[#fff] dark:bg-[#051124] z-50'>Years</p>

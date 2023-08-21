@@ -12,11 +12,12 @@ function RankDifference({ filters }) {
         second_year: ''
     })
 
+    console.log(filters);
 
 
 
     useEffect(() => {
-        async function getAmounts() {
+        async function getDaata() {
             await fetch(url_data)
                 .then(response => response.json())
                 .then(data => {
@@ -26,8 +27,8 @@ function RankDifference({ filters }) {
                     console.log('Problem with the fetching data');
                 });
         }
-        getAmounts()
-    }, [filters,data.length]);
+        getDaata()
+    }, [filters]);
 
 
     useEffect(() => {
@@ -42,14 +43,16 @@ function RankDifference({ filters }) {
                 });
         }
         getYears()
-    }, [data]);
+    }, [filters]);
 
 
     useEffect(() => {
 
         // data ? setChoosenYears({ first_year: data.first_year, second_year: data.second_year }) : setChoosenYears(prev => prev)
-        data &&  setChoosenYears({ first_year: data.first_year, second_year: data.second_year }) 
-    }, [data.first_year,data.second_year])
+        data && data.first_year && setChoosenYears({ first_year: data.first_year, second_year: data.second_year }) 
+        console.log('asd');
+    }, [data.first_year])
+    console.log(choosenYears);
 
     useEffect(() => {
         let url_uptade = `https://searchart.pythonanywhere.com/api/rank_diff/?year1=${choosenYears.first_year}&year2=${choosenYears.second_year}&indicator=${filters.indicator}&countries=${filters.country}`

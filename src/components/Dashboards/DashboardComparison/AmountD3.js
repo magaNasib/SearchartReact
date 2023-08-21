@@ -140,7 +140,7 @@ function AmountD3({ data, countries }) {
   );
   return (
     <div>
-      <div ref={tooltipRef} className="hidden fixed pointer-events-none  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-100 bg-gray-100 rounded-2xl"></div>
+      <div ref={tooltipRef} style={{zIndex:'100'}} className="hidden fixed pointer-events-none  tooltipBox  border-gray-700 dark:bg-chartCardHeader border-2 p-2 text-sm z-100 bg-gray-100 rounded-2xl"></div>
 
       <svg
         ref={ref}

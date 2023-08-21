@@ -31,7 +31,7 @@ div[class*="multiValue"]{
 }
 
 div[class*="MultiValueGeneric"]{
-    color: #A7B4CA ;
+    color: inherit !important ;
 }
 
 div[class*="Input"]{
@@ -45,7 +45,7 @@ div[class*="control"]{
     border-radius: 0.4375rem;
     border: 1px solid ;
     /* background: #293F64; */
-    color: #A7B4CA !important;
+    color: #A7B4CA ;
 }
 #react-select-2-listbox{
     background-color: #293F64;

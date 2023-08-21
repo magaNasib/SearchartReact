@@ -106,7 +106,7 @@ const CountriesSelect = props => {
             classNames={{
                 control: () => "border-none",
                 valueContainer: () => valueContainerStyles,
-                multiValue: () => 'dark:text-[#000]',
+                multiValue: () => 'dark:text-[#fff] text-[#000]',
               }}
         />
     );
